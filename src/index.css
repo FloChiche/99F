@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles pour le menu déroulant */
+.nav-dropdown {
+  @apply absolute invisible opacity-0 w-48 bg-white rounded-lg shadow-lg py-2 mt-2 transition-all duration-300 ease-in-out transform -translate-y-2;
+}
+
+.nav-dropdown.show {
+  @apply visible opacity-100 translate-y-0;
+}
+
+.nav-item {
+  @apply relative;
+}
+
+.nav-item:hover .nav-dropdown {
+  @apply visible opacity-100 translate-y-0;
+  transition-delay: 100ms;
+}
+
+/* Styles pour Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2563eb !important;
+  background: rgba(255, 255, 255, 0.9);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  top: calc(50% - 40px) !important;
+  transform: translateY(-50%) !important;
+}
+
+.swiper-button-prev {
+  left: -50px !important;
+}
+
+.swiper-button-next {
+  right: -50px !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  bottom: -1rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: rgba(37, 99, 235, 0.2) !important;
+  transition: all 0.3s ease;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb !important;
+  transform: scale(1.2);
+}
