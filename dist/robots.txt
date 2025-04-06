@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /wp-admin/
+Disallow: /wp-login/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /*?*
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
 
 Sitemap: https://driveselect.fr/sitemap.xml

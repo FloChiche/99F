@@ -2,9 +2,43 @@ import React, { useState } from 'react';
 import { cars } from '../services/carData';
 import CarCard from '../components/CarCard';
 import CarFilters from '../components/CarFilters';
+import SEOHead from '../components/SEOHead';
 
 const UsedCars = () => {
   const [filteredCars, setFilteredCars] = useState(cars.filter(car => car.status === 'Occasion'));
+
+  // Données pour le schéma JSON-LD de la page des véhicules d'occasion
+  const usedCarsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": filteredCars.map((car, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Vehicle",
+        "name": car.name,
+        "description": car.description,
+        "image": car.image,
+        "brand": car.name.split(' ')[0],
+        "model": car.name.split(' ').slice(1).join(' '),
+        "vehicleConfiguration": car.specs,
+        "mileageFromOdometer": {
+          "@type": "QuantitativeValue",
+          "value": car.additionalSpecs.find(spec => spec.label === 'Kilométrage')?.value.replace(/[^0-9]/g, '') || '',
+          "unitCode": "KMT"
+        },
+        "modelDate": car.additionalSpecs.find(spec => spec.label === 'Année')?.value || '',
+        "offers": {
+          "@type": "Offer",
+          "price": car.price.replace(/[^0-9]/g, ''),
+          "priceCurrency": "EUR",
+          "itemCondition": "https://schema.org/UsedCondition",
+          "availability": "https://schema.org/InStock",
+          "url": `https://driveselect.fr/vehicules/${car.id}`
+        }
+      }
+    }))
+  };
 
   const handleFilterChange = (filters: any) => {
     // Si aucun filtre n'est actif, afficher tous les véhicules d'occasion
@@ -79,10 +113,17 @@ const UsedCars = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24">
+      <SEOHead
+        title="Véhicules d'Occasion Premium | Mercedes, BMW, Audi, Porsche"
+        description="Trouvez votre voiture d'occasion premium à Paris. Véhicules Mercedes, BMW, Audi, Porsche sélectionnés et contrôlés. Faible kilométrage, historique vérifié, garantie."
+        keywords="voitures occasion paris, véhicules occasion premium, mercedes occasion, bmw occasion, audi occasion, porsche occasion, voiture luxe occasion paris"
+        url="/occasions"
+        schema={usedCarsSchema}
+      />
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">Véhicules d'Occasion</h1>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Des véhicules d'occasion sélectionnés et contrôlés par nos experts pour vous garantir qualité et fiabilité.
+          Découvrez notre sélection de véhicules d'occasion premium, soigneusement sélectionnés et contrôlés pour vous garantir une fiabilité optimale.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

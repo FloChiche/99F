@@ -5,12 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+
     <!-- SEO Meta Tags -->
     <title>DriveSelect | Concessionnaire Automobile Premium à Paris</title>
     <meta name="description" content="DriveSelect, votre concessionnaire automobile premium à Paris. Large sélection de véhicules neufs et d'occasion Mercedes, BMW, Audi, Porsche. Essai routier et financement personnalisé." />
-    <meta name="keywords" content="voiture luxe paris, concessionnaire premium, mercedes paris, bmw paris, audi paris, porsche paris, voiture occasion luxe, voiture neuve premium" />
+    <meta name="keywords" content="voiture luxe paris, concessionnaire premium, mercedes paris, bmw paris, audi paris, porsche paris, voiture occasion luxe, voiture neuve premium, acheter voiture luxe, financement auto premium" />
     <meta name="author" content="DriveSelect" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="language" content="fr" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="geo.region" content="FR-75" />
+    <meta name="geo.placename" content="Paris" />
+    <meta name="geo.position" content="48.875023;2.287176" />
+    <meta name="ICBM" content="48.875023, 2.287176" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -18,6 +29,9 @@
     <meta property="og:title" content="DriveSelect | Concessionnaire Automobile Premium à Paris" />
     <meta property="og:description" content="Découvrez notre sélection de véhicules premium neufs et d'occasion. Mercedes, BMW, Audi, Porsche à Paris." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" />
+    <meta property="og:image:alt" content="Véhicules premium chez DriveSelect Paris" />
+    <meta property="og:site_name" content="DriveSelect" />
+    <meta property="og:locale" content="fr_FR" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -29,6 +43,12 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://driveselect.fr/" />
 
+    <!-- Mobile Specific -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#1a1a1a" />
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -36,13 +56,16 @@
         "@type": "AutoDealer",
         "name": "DriveSelect",
         "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+        "logo": "https://driveselect.fr/logo.png",
         "description": "Concessionnaire automobile premium à Paris, spécialisé dans la vente de véhicules neufs et d'occasion haut de gamme.",
+        "url": "https://driveselect.fr",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "14 Avenue de la Grande Armée",
           "addressLocality": "Paris",
           "postalCode": "75017",
-          "addressCountry": "FR"
+          "addressCountry": "FR",
+          "addressRegion": "Île-de-France"
         },
         "geo": {
           "@type": "GeoCoordinates",
@@ -51,7 +74,89 @@
         },
         "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-19:00",
         "telephone": "+33123456789",
-        "priceRange": "€€€€"
+        "email": "contact@driveselect.fr",
+        "priceRange": "€€€€",
+        "sameAs": [
+          "https://www.facebook.com/driveselect",
+          "https://www.instagram.com/driveselect",
+          "https://www.linkedin.com/company/driveselect"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Car",
+              "name": "Mercedes-Benz",
+              "description": "Véhicules Mercedes-Benz neufs et d'occasion"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Car",
+              "name": "BMW",
+              "description": "Véhicules BMW neufs et d'occasion"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Car",
+              "name": "Audi",
+              "description": "Véhicules Audi neufs et d'occasion"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Car",
+              "name": "Porsche",
+              "description": "Véhicules Porsche neufs et d'occasion"
+            }
+          }
+        ]
+      }
+    </script>
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Quelles marques de voitures proposez-vous ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous proposons une sélection de véhicules premium des marques Mercedes-Benz, BMW, Audi et Porsche."
+          }
+        }, {
+          "@type": "Question",
+          "name": "Proposez-vous des financements pour l'achat de véhicules ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, nous offrons différentes solutions de financement adaptées à vos besoins : crédit classique, LOA (Location avec Option d'Achat) et LLD (Location Longue Durée)."
+          }
+        }, {
+          "@type": "Question",
+          "name": "Où est situé votre showroom à Paris ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre showroom est idéalement situé au 14 Avenue de la Grande Armée dans le 17ème arrondissement de Paris."
+          }
+        }]
+      }
+    </script>
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://driveselect.fr/"
+        }]
       }
     </script>
   </head>

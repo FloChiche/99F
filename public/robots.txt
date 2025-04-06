@@ -1,9 +1,10 @@
 User-agent: *
 Allow: /
+
+# Désactiver l'accès à certaines pages privées
 Disallow: /confirmation-essai
+Disallow: /admin/
+Disallow: /profile/
 
 # Sitemap
 Sitemap: https://driveselect.fr/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 10
