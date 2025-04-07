@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, Send, X, RefreshCw, Phone, UserRound } from 'lucide-react';
+import { MessageSquare, Send, X, RefreshCw, Phone, UserRound, Sparkles } from 'lucide-react';
 import { useChatbot } from '../contexts/ChatbotContext';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -185,6 +185,14 @@ const ChatBot: React.FC = () => {
               >
                 <Send className="w-5 h-5" />
               </button>
+            </div>
+            
+            {/* Badge Powered by Mistral */}
+            <div className="flex justify-end mt-2">
+              <div className="flex items-center text-xs text-gray-500 bg-gray-100 rounded-full px-3 py-1">
+                <Sparkles className="w-3 h-3 mr-1 text-purple-500" />
+                Powered by Mistral - AGWS Pro Version
+              </div>
             </div>
           </div>
         </div>
