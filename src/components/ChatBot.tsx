@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, Send, X, RefreshCw, Phone, UserRound, Sparkles } from 'lucide-react';
+import { MessageSquare, Send, X, RefreshCw, Phone, UserRound, Sparkles, Car } from 'lucide-react';
 import { useChatbot } from '../contexts/ChatbotContext';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -71,6 +71,10 @@ const ChatBot: React.FC = () => {
     navigate('/contact');
   };
 
+  const handleInventoryClick = () => {
+    sendMessage("Quels véhicules avez-vous actuellement en stock?");
+  };
+
   return (
     <>
       {/* Bouton flottant pour ouvrir le chat */}
@@ -116,6 +120,29 @@ const ChatBot: React.FC = () => {
                 <p className="text-sm text-gray-700">
                   Bonjour ! Je suis l'assistant virtuel de DriveSelect. Comment puis-je vous aider aujourd'hui ?
                 </p>
+                
+                {/* Boutons de suggestions rapides */}
+                <div className="flex flex-wrap gap-2 mt-3">
+                  <button
+                    onClick={handleInventoryClick}
+                    className="flex items-center gap-1 bg-blue-100 hover:bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs transition-colors"
+                  >
+                    <Car className="w-3 h-3" />
+                    Voir notre inventaire
+                  </button>
+                  <button
+                    onClick={() => sendMessage("Quels sont vos horaires d'ouverture ?")}
+                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs transition-colors"
+                  >
+                    Horaires d'ouverture
+                  </button>
+                  <button
+                    onClick={() => sendMessage("Comment réserver un essai ?")}
+                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs transition-colors"
+                  >
+                    Essai routier
+                  </button>
+                </div>
               </div>
             )}
 

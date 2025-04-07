@@ -28,7 +28,7 @@ export const sendMessage = async (messages: Message[]): Promise<string> => {
       model: MODEL,
       inputs: conversation,
       parameters: {
-        max_new_tokens: 512,
+        max_new_tokens: 700,
         temperature: 0.5,
         top_p: 0.85,
         do_sample: true,
