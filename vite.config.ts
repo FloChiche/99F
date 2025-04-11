@@ -13,8 +13,6 @@ console.log('Variables d\'environnement chargées:');
 console.log('VITE_OPENAI_API_KEY:', process.env.VITE_OPENAI_API_KEY ? 'Disponible' : 'Non disponible');
 console.log('VITE_OPENAI_API_URL:', process.env.VITE_OPENAI_API_URL);
 console.log('VITE_OPENAI_MODEL:', process.env.VITE_OPENAI_MODEL);
-console.log('VITE_HUGGINGFACE_API_KEY:', process.env.VITE_HUGGINGFACE_API_KEY ? 'Disponible' : 'Non disponible');
-console.log('VITE_HUGGINGFACE_MODEL:', process.env.VITE_HUGGINGFACE_MODEL);
 
 export default defineConfig({
   plugins: [

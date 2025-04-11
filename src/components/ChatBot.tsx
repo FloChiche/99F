@@ -214,11 +214,11 @@ const ChatBot: React.FC = () => {
               </button>
             </div>
             
-            {/* Badge Powered by Mistral */}
+            {/* Badge Powered by OpenAI */}
             <div className="flex justify-end mt-2">
               <div className="flex items-center text-xs text-gray-500 bg-gray-100 rounded-full px-3 py-1">
                 <Sparkles className="w-3 h-3 mr-1 text-purple-500" />
-                Powered by Mistral - AGWS Pro Version
+                Powered by OpenAI - ChatGPT 3.5 Turbo 
               </div>
             </div>
           </div>
